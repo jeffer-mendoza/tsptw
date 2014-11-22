@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package command;
 
 import java.io.BufferedReader;
@@ -33,11 +30,11 @@ public class Command {
         int count = 0;//variable que cuenta el numero de ciclos
         float nodos[][] = null;
         float distancias[][] = null;
-        int i;
+        int i;//variable temporal
         String celdas[] = null;//variable temporal para guardas los datos de la n-esima linea
         try {
             while ((linea = br.readLine()) != null) {
-                if (linea.equals("f")) {
+                if (linea.equals("")) {
                     break;
                 }
                 if (count == 0) {//leer solo la primera linea
@@ -62,7 +59,7 @@ public class Command {
             }
 
             generatorLP(n, distancias, nodos);//generar el archivo lp 
-            lp_solve(n);
+            lp_solve(n);//llamar a lp_solve y los resultados salen por consola
 
         } catch (IOException e) {
             e.printStackTrace();
